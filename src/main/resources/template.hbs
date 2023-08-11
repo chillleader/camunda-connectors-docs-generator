@@ -1,0 +1,26 @@
+# {{connectorName}}
+
+{{generate
+    "2-3 short sentences describing the connector based on the element template. What service it connects to?"
+    elementTemplate }}
+
+## Create a {{connectorName}} task
+
+To use the {{connectorName}} in your process, either change the type of existing task using the
+wrench-shaped Change type context menu, or create a new Connector task using the Append Connector context menu.
+Follow [our guide on using Connectors](https://docs.camunda.io/docs/components/connectors/use-connectors/) to learn more.
+
+## Make the {{connectorName}} task executable
+
+{{#each elementTemplate.groups}}
+### {{this.label}}
+
+{{generateGroup this.id elementTemplate}}
+{{/each}}
+
+## Handling the {{connectorName}} response
+
+You can use an output mapping to map the response:
+
+1. Use **Result Variable** to store the response in a process variable. For example, `myResultVariable`.
+2. Use **Result Expression** to map fields from the response into process variables. For example:
